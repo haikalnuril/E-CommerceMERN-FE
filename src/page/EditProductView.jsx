@@ -16,7 +16,7 @@ const EditProductView = () => {
     const getProduct = async () => {
         try {
             const response = await customAPI.get(`/products/${id}`);
-            setProduct(response.data.data);
+            setProduct(response?.data?.data);
         } catch (error) {
             toast.error(error?.response?.data?.message || "Internal server error");
             console.error(error);

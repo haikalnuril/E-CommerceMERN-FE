@@ -10,7 +10,7 @@ export const loader = async () => {
     
     // Fetch products data if access is granted
     const response = await customAPI.get("/products?limit=3");
-    const products = response.data.data;
+    const products = response?.data?.data;
     return { products };
 };
 

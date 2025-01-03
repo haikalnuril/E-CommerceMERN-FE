@@ -11,8 +11,8 @@ export const loader = async ({ request }) => {
         ...new URL(request.url).searchParams.entries(),
     ]);
     const { data } = await customAPI.get("/products", { params: params });
-    const products = data.data;
-    const pagination = data.pagination;
+    const products = data?.data;
+    const pagination = data?.pagination;
     console.log(pagination);
 
     return { products, params, pagination };
