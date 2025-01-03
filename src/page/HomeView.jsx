@@ -8,14 +8,19 @@ import { checkAccess } from "../middlewares/ownerMiddleware";
 
 export const loader = async () => {
     
-    // Fetch products data if access is granted
-    const response = await customAPI.get("/products?limit=3");
-    const products = response?.data?.data;
-    return { products };
+    try {
+        const response = await customAPI.get("/products?limit=3");
+        
+        const products = response?.data?.data || [];
+        return { products };
+    } catch (error) {
+        console.error('Loader Error:', error);
+        return { products: [] };
+    }
 };
 
 const HomeView = () => {
-    const { products } = useLoaderData();
+    const { products = [] } = useLoaderData();
     return (
         <>
             <div>
@@ -26,7 +31,7 @@ const HomeView = () => {
                 <hr className="mb-12" />
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {products.map((product) => (
+                {products?.map((product) => (
                     <CardProduct product={product} key={product._id} />
                 ))}
             </div>
