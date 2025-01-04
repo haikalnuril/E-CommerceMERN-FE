@@ -5,13 +5,15 @@ import FormTextarea from "../components/Form/FormTextarea";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import customAPI from "../api";
+import TitleOfPage from "../components/TitileOfPage";
 
 const EditProductView = () => {
     const categories = ["shoes", "clothes", "tshirt", "pants"];
     const [loading, setLoading] = useState(false);
     const [product, setProduct] = useState({});
-
+    
     let { id } = useParams();
+    TitleOfPage(`Uriel-E Commerce | Edit Product ${id}`);
 
     const getProduct = async () => {
         try {

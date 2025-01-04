@@ -5,8 +5,10 @@ import FormTextarea from "../components/Form/FormTextarea";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import customAPI from "../api";
+import TitleOfPage from "../components/TitileOfPage";
 
 const CreateProductView = () => {
+    TitleOfPage("Uriel-E Commerce | Create Product");
     const categories = ["shoes", "clothes", "tshirt", "pants"];
     const navigate = useNavigate()
 

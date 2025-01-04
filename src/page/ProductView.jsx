@@ -5,6 +5,7 @@ import CardProduct from "../components/CardProduct";
 import Pagination from "../components/Pagination";
 import { useEffect, useState } from "react";
 import { checkAccess } from "../middlewares/ownerMiddleware";
+import TitleOfPage from "../components/TitileOfPage";
 
 export const loader = async ({ request }) => {
     const params = Object.fromEntries([
@@ -19,6 +20,7 @@ export const loader = async ({ request }) => {
 };
 
 const ProductView = () => {
+    TitleOfPage("Uriel-E Commerce | Products");
     const [loading, setLoading] = useState(true);
 
     const { products, pagination } = useLoaderData();

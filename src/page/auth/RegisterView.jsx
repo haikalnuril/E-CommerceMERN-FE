@@ -2,6 +2,7 @@ import FormAuth from "../../components/FormAuth";
 import { redirect } from "react-router-dom";
 import customAPI from "../../api";
 import { toast } from "react-toastify";
+import TitleOfPage from "../../components/TitileOfPage";
 
 export const action = async ({ request }) => {
     const formInputData = await request.formData();
@@ -20,6 +21,7 @@ export const action = async ({ request }) => {
 }
 
 const RegisterView = () => {
+    TitleOfPage("Uriel-E Commerce | Register");
     return <FormAuth isRegister={true} />;
 };
 

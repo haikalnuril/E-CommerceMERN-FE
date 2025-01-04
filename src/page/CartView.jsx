@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CartList from "../components/CartList";
 import CartTotal from "../components/CartTotal";
+import TitleOfPage from "../components/TitileOfPage";
 
 const CartView = () => {
+    TitleOfPage("Uriel-E Commerce | Cart");
     const user = useSelector((state) => state.userState.user);
     const numInCart = useSelector((state) => state.cartState.numItemsInCart);
 

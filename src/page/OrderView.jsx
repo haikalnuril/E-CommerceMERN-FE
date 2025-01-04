@@ -1,6 +1,7 @@
 import { redirect, useLoaderData } from "react-router-dom";
 import { access } from "../middlewares/authMiddleware";
 import customAPI from "../api";
+import TitleOfPage from "../components/TitileOfPage";
 
 export const loader = async () => {
     const accessCheck = await access();
@@ -15,6 +16,7 @@ export const loader = async () => {
 };
 
 const OrderView = () => {
+    TitleOfPage("Uriel-E Commerce | Orders");
     const { orders } = useLoaderData();
     if(!orders.length){
         return <h1 className="text-center text-primary font-bold text-3xl border-b pb-4">No Order yet</h1>

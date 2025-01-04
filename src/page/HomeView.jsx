@@ -5,6 +5,7 @@ import CardProduct from "../components/CardProduct";
 import { redirect, useLoaderData } from "react-router-dom";
 import Hero from "../components/Hero";
 import { checkAccess } from "../middlewares/ownerMiddleware";
+import TitleOfPage from "../components/TitileOfPage";
 
 export const loader = async () => {
     
@@ -20,6 +21,7 @@ export const loader = async () => {
 };
 
 const HomeView = () => {
+    TitleOfPage("Uriel-E Commerce");
     const { products = [] } = useLoaderData();
     return (
         <>

@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
+import TitleOfPage from "../components/TitileOfPage";
 
 const UnauthorizedView = () => {
+    TitleOfPage("Uriel-E Commerce | 401 Unauthorized");
     return (
         <div className="flex flex-col gap-4 items-center justify-center h-[60vh]">
             <h1 className="text-2xl font-bold text-center">401 Unauthorized</h1>

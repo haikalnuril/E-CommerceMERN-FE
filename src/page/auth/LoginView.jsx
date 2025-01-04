@@ -3,6 +3,7 @@ import customAPI from "../../api";
 import { toast } from "react-toastify";
 import { redirect } from "react-router-dom";
 import { loginUser } from "../../features/userSlice";
+import TitleOfPage from "../../components/TitileOfPage";
 
 export const action =(store)=> async ({request}) => {
     const formInputData = await request.formData()
@@ -21,6 +22,7 @@ export const action =(store)=> async ({request}) => {
 }
 
 const LoginView = () => {
+    TitleOfPage("Uriel-E Commerce | Login");
     return <FormAuth/>;
 };
 

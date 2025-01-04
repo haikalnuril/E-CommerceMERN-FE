@@ -6,6 +6,7 @@ import customAPI from "../api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { clearItems } from "../features/cartSlice";
+import TitleOfPage from "../components/TitileOfPage";
 
 const insertSnapScript = () => {
     return new Promise((resolve) => {
@@ -21,6 +22,7 @@ const insertSnapScript = () => {
 };
 
 const CheckoutView = () => {
+    TitleOfPage("Uriel-E Commerce | Checkout");
     const user = useSelector((state) => state.userState.user);
     const cart = useSelector((state) => state.cartState.CartItems);
 

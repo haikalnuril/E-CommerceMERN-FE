@@ -6,9 +6,11 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { generateSelectAmount } from "../utils";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../features/cartSlice";
+import TitleOfPage from "../components/TitileOfPage";
 
 const DetailProduct = () => {
     let { id } = useParams();
+    TitleOfPage(`Uriel-E Commerce | Detail Product ${id}`);
     const [product, setProduct] = useState({});
     const [amount, setAmount] = useState(1);
     const user = useSelector((state) => state.userState.user);
